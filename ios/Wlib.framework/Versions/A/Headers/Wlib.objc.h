@@ -14,6 +14,7 @@
 @class WlibBigInt;
 @class WlibChangeWorkerAddressParams;
 @class WlibConstructorParams;
+@class WlibCreateMinerParams;
 @class WlibExecParams;
 @class WlibFIL;
 @class WlibGenChangeWorkerParamInput;
@@ -67,6 +68,7 @@
 
 // skipped method BigInt.Exp with unsupported parameter or return types
 
+- (NSData* _Nullable)fillBytes:(NSData* _Nullable)buf;
 // skipped method BigInt.Format with unsupported parameter or return types
 
 // skipped method BigInt.GCD with unsupported parameter or return types
@@ -201,6 +203,27 @@
 
 @end
 
+@interface WlibCreateMinerParams : NSObject <goSeqRefInterface> {
+}
+@property(strong, readonly) _Nonnull id _ref;
+
+- (nonnull instancetype)initWithRef:(_Nonnull id)ref;
+- (nonnull instancetype)init;
+// skipped field CreateMinerParams.Owner with unsupported type: github.com/filecoin-project/go-address.Address
+
+// skipped field CreateMinerParams.Worker with unsupported type: github.com/filecoin-project/go-address.Address
+
+// skipped field CreateMinerParams.WindowPoStProofType with unsupported type: github.com/filecoin-project/go-state-types/abi.RegisteredPoStProof
+
+@property (nonatomic) NSData* _Nullable peer;
+// skipped field CreateMinerParams.Multiaddrs with unsupported type: [][]byte
+
+// skipped method CreateMinerParams.MarshalCBOR with unsupported parameter or return types
+
+// skipped method CreateMinerParams.UnmarshalCBOR with unsupported parameter or return types
+
+@end
+
 @interface WlibExecParams : NSObject <goSeqRefInterface> {
 }
 @property(strong, readonly) _Nonnull id _ref;
@@ -251,6 +274,7 @@
 
 // skipped method FIL.Exp with unsupported parameter or return types
 
+- (NSData* _Nullable)fillBytes:(NSData* _Nullable)buf;
 // skipped method FIL.Format with unsupported parameter or return types
 
 // skipped method FIL.GCD with unsupported parameter or return types
@@ -601,6 +625,8 @@ param 做base64编码
 {"err": "some error here"}
  */
 FOUNDATION_EXPORT NSString* _Nonnull WlibGenConstructorParamV3(NSString* _Nullable input);
+
+FOUNDATION_EXPORT NSString* _Nonnull WlibGenCreateMiner(NSString* _Nullable ownerAddr, NSString* _Nullable workerAddr, NSString* _Nullable sealType);
 
 FOUNDATION_EXPORT NSString* _Nonnull WlibGenProposalForChangeOwnerV3(NSString* _Nullable self_, NSString* _Nullable miner, NSString* _Nullable value);
 
